@@ -5,20 +5,18 @@
  */
 package ru.project.DAO;
 
-import java.util.LinkedList;
-import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import javax.persistence.TypedQuery;
 import org.jboss.logging.Logger;
 import ru.project.beans.Users;
+import ru.project.interfaces.daoInterface;
 
 /**
  *
  * @author vasiliy.andricov
  */
-public class UsersDAO {
+public class UsersDAO implements daoInterface<Users, Long> {
 
     private Logger log = Logger.getLogger(getClass().getName());
 
@@ -32,41 +30,46 @@ public class UsersDAO {
         em = emf.createEntityManager();
     }
 
-    public Users getItem(Long id) {
-        log.info("getItem");
+//    public Users getItem(Long id) {
+//        log.info("getItem");
+//
+//        Users res = null;
+//        try {
+//
+//        } catch (Exception e) {
+//            log.error(e.getMessage());
+//        }
+//        return res;
+//    }
+//
+//    public List<Users> getList() {
+//        List<Users> res = new LinkedList();
+//        try {
+//            log.info("getList()");
+//            em.getTransaction().begin();
+//            TypedQuery<Users> namedQuery = em.createNamedQuery("Users.findAll", Users.class);
+//            //namedQuery.setParameter("id", id);
+//            em.getTransaction().commit();
+//            res = namedQuery.getResultList();
+//
+//        } catch (Exception e) {
+//            log.error(e.getMessage());
+//        }
+//        return res;
+//    }
 
-        Users res = null;
-        try {
+//    public void addItem(Users item) {
+//        try {
+//            log.info("addItem()");
+//            em.getTransaction().begin();
+//            em.persist(item);
+//            em.getTransaction().commit();
+//        } catch (Exception e) {
+//        }
+//    }
 
-        } catch (Exception e) {
-            log.error(e.getMessage());
-        }
-        return res;
-    }
-
-    public List<Users> getList() {
-        List<Users> res = new LinkedList();
-        try {
-            log.info("getList()");
-            em.getTransaction().begin();
-            TypedQuery<Users> namedQuery = em.createNamedQuery("Users.findAll", Users.class);
-            //namedQuery.setParameter("id", id);
-            em.getTransaction().commit();
-            res = namedQuery.getResultList();
-            
-        } catch (Exception e) {
-            log.error(e.getMessage());
-        }
-        return res;
-    }
-    
-    public void addItem(Users item){
-        try {
-            log.info("addItem()");
-            em.getTransaction().begin();
-            em.persist(item);
-            em.getTransaction().commit();
-        } catch (Exception e) {
-        }
+    @Override
+    public EntityManager getEM() {
+        return em;
     }
 }

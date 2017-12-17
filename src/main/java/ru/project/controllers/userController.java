@@ -28,7 +28,7 @@ public class userController implements Serializable{
 
     public userController() {
         log.info("userController()");
-        this.userList = (new UsersDAO()).getList();
+        this.userList = (new UsersDAO()).getList("Users.findAll", Users.class);
         log.info("size => " + userList.size());
 
     }
@@ -74,7 +74,7 @@ public class userController implements Serializable{
 
     private void refreshUserList() {
         log.info("refreshUserList()");
-        this.userList = (new UsersDAO()).getList();
+        this.userList = (new UsersDAO()).getList("Users.findAll", Users.class);
     }
 
 }
