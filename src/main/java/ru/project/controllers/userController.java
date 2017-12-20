@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.util.List;
 import org.jboss.logging.Logger;
 import ru.project.DAO.UsersDAO;
+import ru.project.beans.Project;
 import ru.project.beans.Users;
 
 /**
@@ -25,6 +26,7 @@ public class userController implements Serializable {
     private String password;
     private List<Users> userList;
     private Users newUser = new Users();
+    private Project currentProject;
 
     public userController() {
         log.info("userController()");

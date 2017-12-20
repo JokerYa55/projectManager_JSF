@@ -14,6 +14,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -28,6 +30,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @Table(name = "t_projects")
 @XmlRootElement
+@NamedQueries({
+    @NamedQuery(name = "Project.findAll", query = "SELECT t FROM Project t order by t.projectName")
+    , @NamedQuery(name = "Project.findById", query = "SELECT t FROM Project t WHERE t.id = :id")
+})
 public class Project implements Serializable {
 
     @Id
