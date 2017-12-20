@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-  <persistence-unit name="projectManage_JPA" transaction-type="RESOURCE_LOCAL">
-    <provider>org.hibernate.ejb.HibernatePersistence</provider>
-    <non-jta-data-source>java:/ProjectManagersDS</non-jta-data-source>
-    <class>ru.project.beans.Project</class>
-    <class>ru.project.beans.ProjectTaskFiles</class>
-    <class>ru.project.beans.ProjectTasks</class>
-    <class>ru.project.beans.ProjectTasksComment</class>
-    <class>ru.project.beans.SprProjectStatus</class>
-    <class>ru.project.beans.Users</class>
-    <exclude-unlisted-classes>true</exclude-unlisted-classes>
-    <properties>
-      <property name="hibernate.show_sql" value="true"/>
-      <property name="hibernate.format_sql" value="true"/>
-    </properties>
-  </persistence-unit>
+    <persistence-unit name="projectManage_JPA" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <non-jta-data-source>java:/ProjectManagersDS</non-jta-data-source>
+        <class>ru.project.beans.Project</class>
+        <class>ru.project.beans.ProjectTaskFiles</class>
+        <class>ru.project.beans.ProjectTasks</class>
+        <class>ru.project.beans.ProjectTasksComment</class>
+        <class>ru.project.beans.SprProjectStatus</class>
+        <class>ru.project.beans.Users</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <properties>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+        </properties>
+    </persistence-unit>
 </persistence>

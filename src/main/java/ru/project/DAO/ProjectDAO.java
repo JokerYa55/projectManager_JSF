@@ -5,12 +5,12 @@
  */
 package ru.project.DAO;
 
-import ru.project.beans.Users;
+import ru.project.beans.Project;
 
 /**
  *
  * @author vasiliy.andricov
  */
-public class UsersDAO extends abstractDAO<Users, Long> {
+public class ProjectDAO extends abstractDAO<Project, Long> {
 
 }

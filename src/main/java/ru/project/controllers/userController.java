@@ -15,12 +15,12 @@ import ru.project.beans.Users;
  *
  * @author vasiliy.andricov
  */
-public class userController implements Serializable{
+public class userController implements Serializable {
 
     /**
      * Creates a new instance of userController
      */
-    private Logger log = Logger.getLogger(getClass().getName());
+    private final Logger log = Logger.getLogger(getClass().getName());
     private String userName;
     private String password;
     private List<Users> userList;
