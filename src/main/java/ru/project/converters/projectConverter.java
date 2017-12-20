@@ -8,6 +8,7 @@ package ru.project.converters;
 import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
+import javax.faces.convert.Converter;
 import javax.faces.convert.ConverterException;
 import javax.faces.convert.FacesConverter;
 import org.jboss.logging.Logger;
@@ -18,10 +19,11 @@ import ru.project.beans.Project;
  * @author vasiliy.andricov
  */
 @FacesConverter("projectConverter")
-public class projectConverter {
+public class projectConverter implements Converter{
 
     private final Logger log = Logger.getLogger(getClass().getName());
 
+    @Override
     public Object getAsObject(FacesContext fc, UIComponent uic, String value) {
         log.info("getAsObject => " + value);
         if (value != null && value.trim().length() > 0) {
@@ -37,6 +39,7 @@ public class projectConverter {
         }
     }
 
+    @Override
     public String getAsString(FacesContext fc, UIComponent uic, Object object) {
         log.info("getAsString => " );
         if (object != null) {

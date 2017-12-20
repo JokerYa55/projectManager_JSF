@@ -23,8 +23,8 @@ public class projectController {
     /**
      * Creates a new instance of projectController
      */
-    private final Logger log = Logger.getLogger(getClass().getName());
-
+    private final Logger log = Logger.getLogger(getClass().getName());    
+    
     public projectController() {
     }
 

@@ -26,7 +26,7 @@ public class userController implements Serializable {
     private String password;
     private List<Users> userList;
     private Users newUser = new Users();
-    private Project currentProject;
+    private Project currentProject = new Project();
 
     public userController() {
         log.info("userController()");
