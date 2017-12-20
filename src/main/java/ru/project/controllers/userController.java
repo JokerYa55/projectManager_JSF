@@ -79,4 +79,12 @@ public class userController implements Serializable {
         this.userList = (new UsersDAO()).getList("Users.findAll", Users.class);
     }
 
+    public Project getCurrentProject() {
+        return currentProject;
+    }
+
+    public void setCurrentProject(Project currentProject) {
+        this.currentProject = currentProject;
+    }
+
 }

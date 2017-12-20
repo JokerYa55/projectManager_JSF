@@ -7,7 +7,6 @@ package ru.project.beans;
 
 import java.io.Serializable;
 import java.util.UUID;
-import java.util.logging.Logger;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,6 +16,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import org.jboss.logging.Logger;
 import static ru.project.util.hashUtil.encodeToHex;
 import static ru.project.util.hashUtil.sha1;
 
@@ -32,7 +32,7 @@ import static ru.project.util.hashUtil.sha1;
 })
 public class Users implements Serializable {
 
-    private static Logger log = Logger.getLogger("Users");
+    private Logger log = Logger.getLogger(getClass().getName());
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "spr_users_id_seq")

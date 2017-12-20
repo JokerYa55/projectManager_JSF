@@ -24,7 +24,6 @@ public class projectController {
      * Creates a new instance of projectController
      */
     private final Logger log = Logger.getLogger(getClass().getName());
-    private List<Project> projectList;
 
     public projectController() {
     }

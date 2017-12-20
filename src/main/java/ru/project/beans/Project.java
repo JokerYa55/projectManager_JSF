@@ -7,6 +7,7 @@ package ru.project.beans;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Objects;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -92,7 +93,7 @@ public class Project implements Serializable {
 
     @Override
     public String toString() {
-        return "Project{" + "id=" + id + ", projectName=" + projectName + ", date_b=" + date_b + ", date_e=" + date_e + ", status=" + status + '}';
+        return this.projectName;
     }
 
     public SprProjectStatus getStatus() {
@@ -102,5 +103,32 @@ public class Project implements Serializable {
     public void setStatus(SprProjectStatus status) {
         this.status = status;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 97 * hash + Objects.hashCode(this.id);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Project other = (Project) obj;
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        return true;
+    }
+    
+    
 
 }
