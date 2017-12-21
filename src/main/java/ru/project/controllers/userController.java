@@ -68,7 +68,7 @@ public class userController implements Serializable {
     }
 
     public void addUser() {
-        log.info("addUser()");
+        log.info("addUser() => " + newUser);
         (new UsersDAO()).addItem(newUser);
         newUser = new Users();
         refreshUserList();
