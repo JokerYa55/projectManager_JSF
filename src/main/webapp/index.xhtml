@@ -15,9 +15,7 @@
                 <p:outputLabel value="Пароль"/>
                 <p:inputText value="#{userController.password}"/>
                 <p:outputLabel value="Проект"/>
-                <p:selectOneMenu id="car" value="#{userController.currentProject}" converter="projectConverter">                    
-                    <f:selectItems value="#{projectController.projectList}" />
-                </p:selectOneMenu>
+                
             </h:panelGrid>
             <p:commandButton value="войти" action="main"/>
         </h:form>
