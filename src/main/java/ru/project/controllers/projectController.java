@@ -5,9 +5,11 @@
  */
 package ru.project.controllers;
 
+import java.util.HashMap;
 import java.util.List;
+
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 import org.jboss.logging.Logger;
 import ru.project.DAO.ProjectDAO;
 import ru.project.beans.Project;
@@ -17,15 +19,19 @@ import ru.project.beans.Project;
  * @author vasiliy.andricov
  */
 @ManagedBean
-@RequestScoped
+@SessionScoped
 public class projectController {
 
     /**
      * Creates a new instance of projectController
      */
-    private final Logger log = Logger.getLogger(getClass().getName());    
-    
+    private final Logger log = Logger.getLogger(getClass().getName());
+    private HashMap<Long, Project> map = new HashMap();
+
     public projectController() {
+        (new ProjectDAO()).getList("Project.findAll", Project.class).forEach((t) -> {
+            map.put(t.getId(), t);
+        });
     }
 
     public List<Project> getProjectList() {

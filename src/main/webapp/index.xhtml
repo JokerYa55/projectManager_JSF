@@ -10,14 +10,17 @@
     <h:body>
         <h:form>
             <h:panelGrid columns="2">
-                <p:outputLabel value="Имя"/>
-                <p:inputText value="#{userController.userName}"/>
-                <p:outputLabel value="Пароль"/>
-                <p:inputText value="#{userController.password}"/>
-                <p:outputLabel value="Проект"/>
-                
+                <h:outputLabel value="Имя"/>
+                <h:inputText value="#{userController.userName}"/>
+                <h:outputLabel value="Пароль"/>
+                <h:inputText value="#{userController.password}"/>
+                <h:outputLabel value="Проект"/>
+                <h:selectOneMenu id="lazy" value="#{userController.currentProject}" style="width:125px">                    
+                    <f:selectItems value="#{projectController.projectList}" />
+                </h:selectOneMenu>
             </h:panelGrid>
-            <p:commandButton value="войти" action="main"/>
+            <h:commandButton value="войти" action="main"/>
+            <h:messages/>
         </h:form>
     </h:body>
 </html>
