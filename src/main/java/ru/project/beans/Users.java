@@ -32,8 +32,8 @@ import static ru.project.util.hashUtil.sha1;
 })
 public class Users implements Serializable {
 
-    private Logger log = Logger.getLogger(getClass().getName());
-    private static final long serialVersionUID = 1L;
+    //private Logger log = Logger.getLogger(getClass().getName());
+    //private final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "spr_users_id_seq")
     @SequenceGenerator(name = "spr_users_id_seq", sequenceName = "spr_users_id_seq", allocationSize = 1)
@@ -93,7 +93,7 @@ public class Users implements Serializable {
     public void setPassword(String password) {
         this.salt = encodeToHex(UUID.randomUUID().toString().getBytes());
         this.password = encodeToHex(sha1(password + this.salt));
-        log.info("password => " + this.password);
+        //log.info("password => " + this.password);
     }
 
     public String getSalt() {
